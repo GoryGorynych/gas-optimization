@@ -1,6 +1,6 @@
 {
-  "contractAddress": "0x579268432ceA3D81FE6EcbC66f5146906e885627",
-  "arg1": "\"Dummy Lottery\"",
+  "contractAddress": "0x1d6301bD515E55eaCddDEA3A11d40DE0955C3d42",
+  "arg1": "Dummy Lottery",
   "arg2": 60,
   "arg3": 2
 }

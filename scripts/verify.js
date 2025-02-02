@@ -15,12 +15,16 @@ async function verify() {
 
     const deploymentData = JSON.parse(fs.readFileSync("scripts/deployment.json"));
     const { contractAddress, ...argsObject } = deploymentData;
-    const args = [...Object.values(argsObject)];
+    const args = Object.values(argsObject).map(arg =>
+        typeof arg === "string" ? `"${arg}"` : arg
+    );
+    console.log("Args: " + args.join(" "));
 
     console.log(`Verifying contract: ${contractAddress} in ${networkName} network`);
     try {
+        let command = `npx hardhat verify --network ${networkName} ${contractAddress} ${args.join(" ")}`;
         execSync(
-            `npx hardhat verify --network ${networkName} ${contractAddress} ${args.join(" ")}`,
+            command,
             { stdio: "inherit" }
         );
         console.log("Contract verified successfully!");

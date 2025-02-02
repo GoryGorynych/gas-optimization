@@ -4,10 +4,10 @@ const { ethers, network  } = require("hardhat");
 // ************ Сonfiguration block ************ //
 
 //Contract for deploying
-const deployContract = "RawLottery";
+const deployContract = "OptimizedLottery";
 
 //Arguments for contract constructor
-const name = "\"Dummy Lottery\"";
+const name = "Dummy Lottery";
 const winnerPercent = 60;
 const minParticipants = 2;
 //Require fill the args with arguments if any
@@ -31,7 +31,7 @@ async function deploy() {
     const deployer = await EOA.getAddress();
     console.log("EOA is:", deployer);
 
-    console.log(`1. Deploying contract... arguments: ${args.join(" ")}`);
+    console.log(`1. Deploying contract... arguments: ${args.join(", ")}`);
 
     const factory = await ethers.getContractFactory(deployContract);
     const contractInstance = await factory.connect(EOA).deploy(...args);

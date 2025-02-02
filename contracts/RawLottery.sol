@@ -14,7 +14,6 @@ contract RawLottery {
     uint256 public min_participants;
     address public owner;
     uint256 public constant MAX_PARTICIPANTS = 10;
-    string public foo;
 
     error WinnerAlreadyPicked(address winner);
 
@@ -25,7 +24,6 @@ contract RawLottery {
         winnerPercent = _winnerPercent;
         min_participants = _min_participants;
         owner = msg.sender;
-        foo = "foo";
     }
 
     modifier onlyOwner() {

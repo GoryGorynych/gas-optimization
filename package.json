@@ -8,7 +8,8 @@
     "test": "hardhat test",
     "deploy": "hardhat run scripts/deploy.js",
     "verify": "hardhat run scripts/verify.js",
-    "coverage": "hardhat coverage"
+    "coverage": "hardhat coverage",
+    "lint": "npx eslint . && solhint contracts/**"
   },
   "keywords": [],
   "author": "",
